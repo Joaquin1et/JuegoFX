@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.JuegoFxController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1040.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controller.JuegoFxController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="240.0" styleClass="sidepane" stylesheets="@../css/StylesJuego.css">
+         <children>
+            <Label contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="37.0" style="-fx-background-radius: 10px;" stylesheets="@../css/StylesJuego.css" text="Label">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="sidepane" />
+                  <String fx:value="redPane" />
+               </styleClass>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="contenArea_Prin" layoutX="240.0" prefHeight="600.0" prefWidth="800.0" />
+   </children>
 </AnchorPane>

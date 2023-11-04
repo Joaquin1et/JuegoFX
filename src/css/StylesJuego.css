@@ -1,0 +1,28 @@
+
+/* 
+    Created on : 04-nov-2023, 12:15:06
+    Author     : Joaquín
+*/
+.sidepane{
+    -fx-background-color: #292728;
+}
+.contenPane{
+    -fx-background-color: #ccffff;
+}
+.redPane{
+    -fx-background-color: #B20837;
+    
+}
+.buttons{
+    -fx-background-color:transparent;
+    -fx-background-radius: 0px;  
+}
+.buttons:hover{
+    -fx-background-color:transparent;
+    -fx-background-radius: 0px;
+    -fx-border-color:#B20837;
+    -fx-border-width: 3px 0px 3px 0px;
+    -fx-border-style: solid;
+    
+}
+

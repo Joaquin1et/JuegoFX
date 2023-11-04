@@ -6,25 +6,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 /**
  *
  * @author Joaquín
  */
 public class JuegoFxController implements Initializable {
-    
+
     @FXML
-    private Label label;
-    
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+    private Pane contenArea_Prin;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+        //JuegoFX juegoFx = new JuegoFX();
+      
+        
+    } 
+   
 }
