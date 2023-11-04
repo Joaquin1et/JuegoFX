@@ -20,7 +20,6 @@ public class JuegoFxController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        //JuegoFX juegoFx = new JuegoFX();
       
         
     } 

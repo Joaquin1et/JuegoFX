@@ -2,6 +2,8 @@
 package juegofx;
 
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -17,6 +19,7 @@ import javafx.stage.Stage;
 public class JuegoFX extends Application implements Runnable{
     
     private static Thread thread;
+    private static volatile boolean enFuncionamiento = false;
     
     @Override
     public void start(Stage stage ) throws Exception{
@@ -41,20 +44,30 @@ public class JuegoFX extends Application implements Runnable{
       
     }
     
-    private void iniciar(){
+    private synchronized void iniciar(){
+        enFuncionamiento = true;
+        
         thread = new Thread(this,"Gráficos");
         thread.start();
         
     }
     
-    private void detener(){
-        
+    private synchronized void detener(){
+        try {
+            enFuncionamiento = true;
+            
+            thread.join();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(JuegoFX.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.print("Error en el metodo detener.");
+        }
     }
 
     @Override
     public void run() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        System.out.print("Estamos estudiando los hilos");
+        while(enFuncionamiento){
+            
+        }
     }
     
 }
